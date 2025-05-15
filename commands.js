@@ -8,7 +8,7 @@ const commands = [
   },
   {
     name: 'create',
-    description: 'Creates a new  short url',
+    description: 'Creates a new short url',
     options: [
       {
         name: 'url',
@@ -17,8 +17,31 @@ const commands = [
         required: true,
       },
     ],
-  }
-];
+  },
+  {
+    name: 'delete',
+    description: 'Deletes a short URL by its short code',
+    options: [
+      {
+        name: 'code',
+        type: 3, // STRING
+        description: 'The short URL code to delete',
+        required: true,
+      },
+    ],
+  },
+  {
+    name: 'visit',
+    description: 'Get the original URL from a short URL',
+    options: [
+        {
+        name: 'shorturl',
+        type: 3, // STRING
+        description: 'The short URL or ID to visit',
+        required: true,
+        },
+    ],
+}];
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
